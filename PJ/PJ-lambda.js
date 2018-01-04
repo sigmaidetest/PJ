@@ -1,10 +1,8 @@
-const ddb = AWS.DynamoDB.DocumentClient();
-function handle(event, context, callback) {
-
-
+const ddb = AWS.DynamoDB();
+exports.handler = function (event, context, callback) {
     ddb.put({
         TableName: 'test_table',
-        Item: { HI: 'OKAY_XYZ' }
+        Item: { mom: 'yes' }
     }, function (err, data) {
         if (err) {
             //handle error
@@ -12,7 +10,5 @@ function handle(event, context, callback) {
             //your logic goes here
         }
     });
-
-
 
 }
